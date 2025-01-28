@@ -6,4 +6,4 @@
 
 <img src="https://github.com/favicon.ico" alt="gh logo" height="24px"> [Github Profile](https://github.com/dkng27)
 
-🚩 [Capture The Flag (CTF) Writeups](./ctf-writeups/README.md)
+🚩 [Capture The Flag (CTF) Writeups](./ctf-writeups/readme.md)
