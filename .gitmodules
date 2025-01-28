@@ -1,0 +1,3 @@
+[submodule "ctf-writeups"]
+	path = ctf-writeups
+	url = https://github.com/dkng27/ctf-writeups.git
