@@ -1,9 +1,6 @@
-# dkng27's "Website" 🔜
-
 👋 Hey there! I'm dkng27. aka dkwm. aka weirdman9000. <img src="https://raw.githubusercontent.com/DuckOfDisorder/BlobCats/refs/heads/main/PNGs/BlobCats/BlobCat_MeltThumbsUp.png" alt="blobcatmeltthumb" height="24px"> 
 
-> [!NOTE]
-> This website is not a CTF challenge.
+❗ This website is not a CTF challenge.
 
 ### Links
 
