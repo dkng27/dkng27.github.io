@@ -1,3 +1,6 @@
 [submodule "ctf-writeups"]
 	path = ctf-writeups
 	url = https://github.com/dkng27/ctf-writeups.git
+[submodule "class-notes"]
+	path = class-notes
+	url = https://github.com/dkng27/class-notes.git
