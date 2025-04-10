@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Check if user can access site</h1>
+    <p id="res">Enter a url to check if client can access</p>
+    <input type="url" id="url" autocomplete="off" />
+    <button id="check" onclick="do_leak()">Check</button>
+</body>
+<script>
+    const do_leak = async () => {
+        const init_time = performance.now();
+        const url = document.getElementById('url').value
+        const res = await leak(url)
+        document.getElementById('res').innerText = `Client can access: ${res === 0 ? 'Yes' : 'No'} in ${performance.now() - init_time} ms`
+    }
+    const leak = async (url) => {
+        return new Promise((r) => {
+            let s = document.createElement('object')
+            s.data = url
+            s.onload = (e) => {
+                e.target.remove()
+                return r(0)
+            }
+            s.onerror = (e) => {
+                e.target.remove()
+                return r(1)
+            }
+            document.body.appendChild(s)
+        })
+    }
+</script>
+
+</html>

